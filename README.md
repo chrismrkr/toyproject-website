@@ -9,6 +9,7 @@ HTML, CSS, Javascript 연습을 위한 웹 사이트 제작 토이 프로젝트
 웹 사이트 개발 과정을 하나씩 분석하도록 한다. 아래의 이미지와 설명만을 참조해서 웹 사이트를 다시 만들 수 있어야 한다.
 
 
+![doitresult](https://user-images.githubusercontent.com/62477958/201807695-df506f38-167e-40ed-970f-173103711754.png)
 
 
 ## 1. 웹 사이트 기획
@@ -93,7 +94,32 @@ Logo 영역에는 웹 사이트를 나타내는 제목이 필요하고, 또 제�
 
 사진들과 클릭을 위한 버튼을 삽입한다. 그러므로, \<img src="...">와 \<button> 태그를 사용한다.
 
+슬라이드 사진 위치를 설정하기 위해 postion 속성을 지정해야 하므로, div가 중첩되는 구조로 만들자.
+
 ### 4.2 스타일 설정
 
 특별히 필요한 CSS 속성은 아래와 같다.
+
++ position: (relative | absolute); -> 이미지와 버튼 위치 설정.
++ left: 0; -> 버튼을 왼쪽에 붙이기 위함
++ right: 0; -> 버튼을 오른쪽으로 붙이기 위함.
+
+### 4.3 javascript 설정
+
+코드와 주석을 통해 알아보자. 구체적인 코드는 생략한다.
+
+```js
+var slides = document.querySelectorAll("#slides > img"); /* 모든 이미지를 리스트로 가져옴 */
+var prev = document.getElementById("prev"); /* 이전 버튼 가져옴 */
+var next = document.getElementById("next"); /* 다음 버튼 가져옴 */
+
+slides.forEach((slide)->{
+  slide.style.display = "none";
+});
+
+/*
+  이후, currentIdx만 display를 block으로 처리하고, prev와 next onClick 기능을 완성한다.
+*/
+```
+
 
